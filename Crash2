@@ -1,0 +1,285 @@
+---- Minecraft Crash Report ----
+
+WARNING: coremods are present:
+  llibrary (llibrary-core-1.0.11-1.12.2.jar)
+  Inventory Tweaks Coremod (InventoryTweaks-1.63.jar)
+  LoadingPlugin (Skillable-Mod-1.12.2.jar)
+  CreativePatchingLoader (CreativeCore-1.12.2.jar)
+  ForgelinPlugin (Shadowfacts-Forgelin-1.12.2.jar)
+  Born in a Barn (Born-In-A-Barn-Mod-1.12.2.jar)
+  DLFMLCorePlugin (Dynamic-Lights-Mod-1.12.2.jar)
+  ItemPatchingLoader (ItemPhysic-Mod-Full-1.12.2.jar)
+  IvToolkit (IvToolkit-1.12.jar)
+  CTMCorePlugin (CTM-MC1.12.2-0.3.3.22.jar)
+  HCASM (Hammer-Core-1.12.2.jar)
+Contact their authors BEFORE contacting forge
+
+// Shall we play a game?
+
+Time: 7/31/19 11:01 PM
+Description: Ticking entity
+
+java.lang.NullPointerException: Ticking entity
+	at net.minecraft.world.WorldServer.func_184165_i(WorldServer.java:1075)
+	at net.minecraft.world.WorldServer.func_72838_d(WorldServer.java:1058)
+	at net.minecraft.entity.player.EntityPlayerMP.func_70645_a(EntityPlayerMP.java:514)
+	at net.minecraft.entity.EntityLivingBase.func_70097_a(EntityLivingBase.java:1023)
+	at net.minecraft.entity.player.EntityPlayer.func_70097_a(EntityPlayer.java:1038)
+	at net.minecraft.entity.player.EntityPlayerMP.func_70097_a(EntityPlayerMP.java:645)
+	at net.minecraft.world.Explosion.func_77278_a(Explosion.java:159)
+	at net.minecraft.world.WorldServer.func_72885_a(WorldServer.java:1169)
+	at net.minecraft.world.World.func_72876_a(World.java:2300)
+	at net.minecraft.entity.monster.EntityCreeper.func_146077_cc(EntityCreeper.java:271)
+	at net.minecraft.entity.monster.EntityCreeper.func_70071_h_(EntityCreeper.java:168)
+	at net.minecraft.world.World.func_72866_a(World.java:1993)
+	at net.minecraft.world.WorldServer.func_72866_a(WorldServer.java:832)
+	at net.minecraft.world.World.func_72870_g(World.java:1955)
+	at net.minecraft.world.World.func_72939_s(World.java:1759)
+	at net.minecraft.world.WorldServer.func_72939_s(WorldServer.java:613)
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:767)
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:668)
+	at net.minecraft.server.integrated.IntegratedServer.func_71217_p(IntegratedServer.java:252)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:526)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at net.minecraft.world.WorldServer.func_184165_i(WorldServer.java:1075)
+	at net.minecraft.world.WorldServer.func_72838_d(WorldServer.java:1058)
+	at net.minecraft.entity.player.EntityPlayerMP.func_70645_a(EntityPlayerMP.java:514)
+	at net.minecraft.entity.EntityLivingBase.func_70097_a(EntityLivingBase.java:1023)
+	at net.minecraft.entity.player.EntityPlayer.func_70097_a(EntityPlayer.java:1038)
+	at net.minecraft.entity.player.EntityPlayerMP.func_70097_a(EntityPlayerMP.java:645)
+	at net.minecraft.world.Explosion.func_77278_a(Explosion.java:159)
+	at net.minecraft.world.WorldServer.func_72885_a(WorldServer.java:1169)
+	at net.minecraft.world.World.func_72876_a(World.java:2300)
+	at net.minecraft.entity.monster.EntityCreeper.func_146077_cc(EntityCreeper.java:271)
+	at net.minecraft.entity.monster.EntityCreeper.func_70071_h_(EntityCreeper.java:168)
+	at net.minecraft.world.World.func_72866_a(World.java:1993)
+	at net.minecraft.world.WorldServer.func_72866_a(WorldServer.java:832)
+	at net.minecraft.world.World.func_72870_g(World.java:1955)
+
+-- Entity being ticked --
+Details:
+	Entity Type: minecraft:creeper (net.minecraft.entity.monster.EntityCreeper)
+	Entity ID: 10069
+	Entity Name: Creeper
+	Entity's Exact location: -121.70, 13.00, 182.70
+	Entity's Block location: World: (-122,13,182), Chunk: (at 6,0,6 in -8,11; contains blocks -128,0,176 to -113,255,191), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Entity's Momentum: 0.00, -0.08, 0.00
+	Entity's Passengers: []
+	Entity's Vehicle: ~~ERROR~~ NullPointerException: null
+Stacktrace:
+	at net.minecraft.world.World.func_72939_s(World.java:1759)
+	at net.minecraft.world.WorldServer.func_72939_s(WorldServer.java:613)
+
+-- Affected level --
+Details:
+	Level name: New World-
+	All players: 1 total; [EntityPlayerMP['iiRoyales'/9150, l='New World-', x=-120.33, y=13.00, z=181.70]]
+	Chunk stats: ServerChunkCache: 626 Drop: 0
+	Level seed: -6083052588608556952
+	Level generator: ID 06 - BIOMESOP, ver 0. Features enabled: true
+	Level generator options: 
+	Level spawn location: World: (-198,64,203), Chunk: (at 10,4,11 in -13,12; contains blocks -208,0,192 to -193,255,207), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Level time: 2503 game time, 2503 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 16291 (now: false), thunder time: 30254 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: true
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:767)
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:668)
+	at net.minecraft.server.integrated.IntegratedServer.func_71217_p(IntegratedServer.java:252)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:526)
+	at java.lang.Thread.run(Thread.java:745)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_51, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 2957518080 bytes (2820 MB) / 6442450944 bytes (6144 MB) up to 6442450944 bytes (6144 MB)
+	JVM Flags: 8 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xmx6G -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M
+	IntCache: cache: 0, tcache: 0, allocated: 4, tallocated: 105
+	FML: MCP 9.42 Powered by Forge 14.23.5.2838 Optifine OptiFine_1.12.2_HD_U_E3 121 mods loaded, 121 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State  | ID                          | Version                  | Source                                        | Signature                                |
+	|:------ |:--------------------------- |:------------------------ |:--------------------------------------------- |:---------------------------------------- |
+	| LCHIJA | minecraft                   | 1.12.2                   | minecraft.jar                                 | None                                     |
+	| LCHIJA | mcp                         | 9.42                     | minecraft.jar                                 | None                                     |
+	| LCHIJA | FML                         | 8.0.99.99                | forge-1.12.2-14.23.5.2838.jar                 | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCHIJA | forge                       | 14.23.5.2838             | forge-1.12.2-14.23.5.2838.jar                 | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCHIJA | creativecoredummy           | 1.0.0                    | minecraft.jar                                 | None                                     |
+	| LCHIJA | itemphysic                  | 1.4.0                    | minecraft.jar                                 | None                                     |
+	| LCHIJA | ivtoolkit                   | 1.3.3-1.12               | minecraft.jar                                 | None                                     |
+	| LCHIJA | alwaysdroploot              | 1.12.2-1.0.1             | Always-Drop-Loot-Mod-1.12.2.jar               | None                                     |
+	| LCHIJA | animalnet                   | 1.12                     | AnimalNet-Mod-1.12.2.jar                      | None                                     |
+	| LCHIJA | skillable                   | beta-10                  | Skillable-Mod-1.12.2.jar                      | None                                     |
+	| LCHIJA | autoreglib                  | 1.3-20                   | AutoRegLib-1.12.2.jar                         | None                                     |
+	| LCHIJA | babyanimals                 | 1.11-3                   | Baby-Animals-Mod-1.12.2.jar                   | None                                     |
+	| LCHIJA | baubles                     | 1.5.2                    | Baubles-Mod-1.12.2.jar                        | None                                     |
+	| LCHIJA | biomesoplenty               | 7.0.1.2427               | BiomesOPlenty-1.12.2-7.0.1.2427-universal.jar | None                                     |
+	| LCHIJA | better_diving               | 1.3.90                   | BetterDiving-1.12.2-1.3.90.jar                | None                                     |
+	| LCHIJA | patchouli                   | 1.0-19                   | Patchouli-Mod-1.12.2.jar                      | None                                     |
+	| LCHIJA | llibrary                    | 1.7.19                   | llibrary-1.7.19-1.12.2.jar                    | b9f30a813bee3b9dd5652c460310cfcd54f6b7ec |
+	| LCHIJA | bewitchment                 | @VERSION@                | Bewitchment-Mod-1.12.2.jar                    | None                                     |
+	| LCHIJA | bibliocraft                 | 2.4.5                    | BiblioCraft-Mod-1.12.2.jar                    | None                                     |
+	| LCHIJA | blockcraftery               | 1.12.2-1.3.1             | blockcraftery-1.12.2-1.3.1.jar                | None                                     |
+	| LCHIJA | overlord                    | 2.4.14                   | Overlord-Mod-1.12.2.jar                       | None                                     |
+	| LCHIJA | guideapi                    | 1.12-2.1.8-63            | Guide-API-1.12.2.jar                          | None                                     |
+	| LCHIJA | bloodmagic                  | 1.12.2-2.4.1-103         | Blood-Magic-Mod-1.12.2.jar                    | None                                     |
+	| LCHIJA | jei                         | 4.15.0.287               | jei_1.12.2-4.15.0.287.jar                     | None                                     |
+	| LCHIJA | thaumcraft                  | 6.1.BETA26               | Thaumcraft-Mod-1.12.2.jar                     | None                                     |
+	| LCHIJA | botania                     | r1.10-360                | Botania-Mod-1.12.2.jar                        | None                                     |
+	| LCHIJA | carryon                     | 1.12.2                   | CarryOn+MC1.12.2+v1.12.2.jar                  | 55e88f24d04398481ae6f1ce76f65fd776f14227 |
+	| LCHIJA | chameleon                   | 1.12-4.1.3               | Chameleon-Library-1.12.jar                    | None                                     |
+	| LCHIJA | chiselsandbits              | 14.33                    | chiselsandbits-14.33.jar                      | None                                     |
+	| LCHIJA | sanlib                      | 1.5.1                    | SanLib-1.12.2-1.5.1.jar                       | df48348748b5e141b1d118e2302a8d5be930b708 |
+	| LCHIJA | claysoldiers                | 3.0.0-beta.2             | ClaySoldiersMod-1.12.2-3.0.0-beta.2.jar       | None                                     |
+	| LCHIJA | codechickenlib              | 3.2.2.353                | CodeChickenLib-1.12.2-3.2.2.353-universal.jar | f1850c39b2516232a2108a7bd84d1cb5df93b261 |
+	| LCHIJA | compactstorage              | 3.1                      | Compact-Storage-Mod-1.12.2.jar                | None                                     |
+	| LCHIJA | ci                          | 1.3                      | Compressed-Items-Mod-1.12.2.jar               | None                                     |
+	| LCHIJA | craftablesaddles            | 1.3                      | Craftable-Saddles-Mod-1.12.2.jar              | None                                     |
+	| LCHIJA | craftstudioapi              | 1.0.0                    | CraftStudio-API-1.12.2.jar                    | None                                     |
+	| LCHIJA | creativecore                | 1.9.9                    | CreativeCore-1.12.2.jar                       | None                                     |
+	| LCHIJA | ctm                         | MC1.12.2-0.3.3.22        | CTM-MC1.12.2-0.3.3.22.jar                     | None                                     |
+	| LCHIJA | customspawner               | 3.11.4                   | Custom-Mob-Spawner-Mod-1.12.2.jar             | None                                     |
+	| LCHIJA | torohealthmod               | 1.12.2-11                | Damage-Indicators-1.12.2.jar                  | None                                     |
+	| LCHIJA | dimdoors                    | 3.0.9+287                | Dimensional-Doors-Mod-1.12.2.jar              | None                                     |
+	| LCHIJA | doggytalents                | 1.15.0.5                 | Doggy-Talents-Mod-1.12.2.jar                  | None                                     |
+	| LCHIJA | dynamiclights               | 1.4.9                    | Dynamic-Lights-Mod-1.12.2.jar                 | None                                     |
+	| LCHIJA | dynamiclights_onfire        | 1.0.7                    | Dynamic-Lights-Mod-1.12.2.jar                 | None                                     |
+	| LCHIJA | dynamiclights_creepers      | 1.0.6                    | Dynamic-Lights-Mod-1.12.2.jar                 | None                                     |
+	| LCHIJA | dynamiclights_dropitems     | 1.1.0                    | Dynamic-Lights-Mod-1.12.2.jar                 | None                                     |
+	| LCHIJA | dynamiclights_entityclasses | 1.0.1                    | Dynamic-Lights-Mod-1.12.2.jar                 | None                                     |
+	| LCHIJA | dynamiclights_mobequipment  | 1.1.0                    | Dynamic-Lights-Mod-1.12.2.jar                 | None                                     |
+	| LCHIJA | dynamiclights_flamearrows   | 1.0.1                    | Dynamic-Lights-Mod-1.12.2.jar                 | None                                     |
+	| LCHIJA | dynamiclights_floodlights   | 1.0.3                    | Dynamic-Lights-Mod-1.12.2.jar                 | None                                     |
+	| LCHIJA | dynamiclights_otherplayers  | 1.0.9                    | Dynamic-Lights-Mod-1.12.2.jar                 | None                                     |
+	| LCHIJA | dynamiclights_theplayer     | 1.1.3                    | Dynamic-Lights-Mod-1.12.2.jar                 | None                                     |
+	| LCHIJA | dynamictrees                | 1.12.2-0.9.5             | DynamicTrees-1.12.2-0.9.5.jar                 | None                                     |
+	| LCHIJA | equipmenttooltips           | 1.0.3                    | Equipment-Tooltips-Mod-1.12.2.jar             | None                                     |
+	| LCHIJA | extrabows                   | v1.12.2 b6               | Extra-Bows-Mod-1.12.2.jar                     | None                                     |
+	| LCHIJA | familiarfauna               | 1.0.11                   | FamiliarFauna-1.12.2-1.0.11.jar               | None                                     |
+	| LCHIJA | forestry                    | 5.8.0.311                | Forestry-Mod-1.12.2.jar                       | None                                     |
+	| LCHIJA | globe                       | 0.0.1                    | Globe-1.12.2-0.0.1.jar                        | None                                     |
+	| LCHIJA | goodluckskeleton            | 1.0                      | goodluckskeleton-1.1-MC1.12.jar               | None                                     |
+	| LCHIJA | gottschcore                 | 1.7.0                    | GottschCore-mc1.12.2-f14.23.5.2768-v1.7.0.jar | None                                     |
+	| LCHIJA | grapplemod                  | 1.12.2-v11.1             | grapplemod-v11.1-1.12.2.jar                   | None                                     |
+	| LCHIJA | hammercore                  | 2.0.4.2                  | Hammer-Core-1.12.2.jar                        | 4d7b29cd19124e986da685107d16ce4b49bc0a97 |
+	| LCHIJA | ichunutil                   | 7.2.1                    | iChun-Util-Mod-1.12.2.jar                     | 4db5c2bd1b556f252a5b8b54b256d381b2a0a6b8 |
+	| LCHIJA | hats                        | 7.0.0                    | iChuns-Hats-Mod-1.12.2.jar                    | None                                     |
+	| LCHIJA | hatstand                    | 7.0.0                    | Hat-Stand-Mod-1.12.2.jar                      | None                                     |
+	| LCHIJA | waila                       | 1.8.26                   | Hwyla-Mod-1.12.2.jar                          | None                                     |
+	| LCHIJA | iceandfire                  | 1.7.1                    | iceandfire-1.7.1-1.12.2.jar                   | None                                     |
+	| LCHIJA | inventorysorter             | 1.13.3+57                | Inventory-Sorter-Mod-1.12.2.jar               | None                                     |
+	| LCHIJA | inventorytweaks             | 1.63+release.109.220f184 | InventoryTweaks-1.63.jar                      | 55d2cd4f5f0961410bf7b91ef6c6bf00a766dcbe |
+	| LCHIJA | itlt                        | 1.0.0                    | Its-the-Little-Things-Mod-1.12.2.jar          | None                                     |
+	| LCHIJA | forgelin                    | 1.8.2                    | Shadowfacts-Forgelin-1.12.2.jar               | None                                     |
+	| LCHIJA | shadowmc                    | 3.8.0                    | ShadowMC-1.12.2.jar                           | None                                     |
+	| LCHIJA | leveluphp                   | 1.12.2-1.4.0             | Level-Up-HP-Mod-1.12.2.jar                    | None                                     |
+	| LCHIJA | lostcities                  | 2.0.21                   | lostcities-1.12-2.0.21.jar                    | None                                     |
+	| LCHIJA | mantle                      | 1.12-1.3.3.55            | Mantle-Mod-1.12.2.jar                         | None                                     |
+	| LCHIJA | mcjtylib_ng                 | 3.5.3                    | McJtyLib-1.12.2.jar                           | None                                     |
+	| LCHIJA | millenaire                  | Millénaire 7.2.1         | millenaire-1.12.2-7.2.1.jar                   | None                                     |
+	| LCHIJA | minemenu                    | 1.6.10                   | MineMenu-Mod-1.12.2.jar                       | None                                     |
+	| LCHIJA | miniheads                   | 1.0.7                    | MiniHeads-Mod-1.12.2.jar                      | None                                     |
+	| LCHIJA | mobends                     | 0.24                     | Mo-Bends-1.12.jar                             | None                                     |
+	| LCHIJA | mocreatures                 | 12.0.5                   | Mo-Creatures-Mod-1.12.2.jar                   | None                                     |
+	| LCHIJA | mobdismemberment            | 7.0.0                    | MobDismemberment-1.12.2-7.0.0.jar             | None                                     |
+	| LCHIJA | mobultion                   | 0.4.5                    | Mobultion-Mod-1.12.2.jar                      | 4fe096bf3ddb2da90a69bb82abd57398549af8a5 |
+	| LCHIJA | morph                       | 7.1.3                    | Morphing-Mod-1.12.2.jar                       | 4db5c2bd1b556f252a5b8b54b256d381b2a0a6b8 |
+	| LCHIJA | mowziesmobs                 | 1.5.4                    | mowziesmobs-1.5.4.jar                         | None                                     |
+	| LCHIJA | multimob                    | 1.0.5                    | multimob-1.0.5.jar                            | None                                     |
+	| LCHIJA | uteamcore                   | 2.2.4.107                | u_team_core-1.12.2-2.2.4.107.jar              | None                                     |
+	| LCHIJA | musicplayer                 | 2.0.1.19                 | Music-Player-Mod-1.12.2.jar                   | None                                     |
+	| LCHIJA | recipehandler               | 0.12                     | No-More-Recipe-Conflict-Mod-1.12.2.jar        | None                                     |
+	| LCHIJA | placeableitems              | 3.3                      | placeableitems-3.3.jar                        | None                                     |
+	| LCHIJA | placebo                     | 1.6.0                    | Placebo-1.12.2.jar                            | None                                     |
+	| LCHIJA | primitivemobs               | 1.2.3a                   | primitivemobs-1.2.3a.jar                      | None                                     |
+	| LCHIJA | reccomplex                  | 1.4.8.2                  | Recurrent-Complex-Mod-1.12.2.jar              | None                                     |
+	| LCHIJA | restrictions                | 1.3.0                    | Restrictions-Mod-1.12.2.jar                   | None                                     |
+	| LCHIJA | roguelike                   | 1.8.0                    | Roguelike-Dungeons-Mod-1.12.2.jar             | None                                     |
+	| LCHIJA | ropebridge                  | 2.0.5                    | ropebridge-1.12-2.0.7.jar                     | None                                     |
+	| LCHIJA | sanplayermodel              | 1.1.1                    | SanLib-1.12.2-1.5.1.jar                       | None                                     |
+	| LCHIJA | signbutton                  | 1.0.1                    | SignButton-1.12.2-1.0.1.jar                   | None                                     |
+	| LCHIJA | simplecore                  | 1.7.3.4                  | SimpleCore-API-1.12.2.jar                     | None                                     |
+	| LCHIJA | simpleores                  | 1.11.2.2                 | SimpleOres-Mod-1.12.2.jar                     | None                                     |
+	| LCHIJA | simplylight                 | 0.7.0                    | Simply-Light-Mod-1.12.2.jar                   | None                                     |
+	| LCHIJA | lemonlib                    | 1.3.0                    | LemonLib-1.12.2.jar                           | None                                     |
+	| LCHIJA | statues                     | 1.0.1                    | Statues-Rechiseled-Mod-1.12.2.jar             | None                                     |
+	| LCHIJA | stonechest                  | 1.0.4                    | Stone-Chest-Mod-1.12.2.jar                    | None                                     |
+	| LCHIJA | storagedrawers              | 1.12-5.2.5               | Storage-Drawers-Mod-1.12.jar                  | None                                     |
+	| LCHIJA | testdummy                   | 1.12                     | Test-Dummy-Mod-1.12.2.jar                     | None                                     |
+	| LCHIJA | mightyarchitect             | 0.3.0                    | The-Mighty-Architect-Mod-1.12.2.jar           | None                                     |
+	| LCHIJA | theoneprobe                 | 1.4.28                   | The-One-Probe-Mod-1.12.2.jar                  | None                                     |
+	| LCHIJA | toolbelt                    | 1.9.6                    | Tool-Belt-Mod-1.12.2.jar                      | None                                     |
+	| LCHIJA | torchlever                  | 1.0                      | TorchLever1.12.2-1.0.jar                      | None                                     |
+	| LCHIJA | torchmaster                 | 1.7.1.74                 | TorchMaster-Mod-1.12.2.jar                    | 5e9a436b366831c8f54a7e80b015784da69278c6 |
+	| LCHIJA | travellersboots             | 1.0.3                    | Travellers-Boots-Mod-1.12.2.jar               | None                                     |
+	| LCHIJA | treasure2                   | 1.4.3                    | Treasure2-mc1.12.2-f14.23.5.2768-v1.4.3.jar   | None                                     |
+	| LCHIJA | bspkrscore                  | at_0.9                   | TreeCapitator-Mod-1.12.jar                    | None                                     |
+	| LCHIJA | treecapitator               | at_0.9                   | TreeCapitator-Mod-1.12.jar                    | None                                     |
+	| LCHIJA | twilightforest              | 3.8.689                  | twilightforest-1.12.2-3.8.689-universal.jar   | None                                     |
+	| LCHIJA | visuals                     | 6r                       | Visuals-1.12.2-6r.jar                         | 4d7b29cd19124e986da685107d16ce4b49bc0a97 |
+	| LCHIJA | wailaharvestability         | 1.1.11                   | Waila-Harvestability-Mod-1.12.jar             | None                                     |
+	| LCHIJA | wearablebackpacks           | 3.1.3                    | Wearable-Backpacks-Mod-1.12.2.jar             | None                                     |
+	| LCHIJA | jurassicraft                | 2.1.23                   | JurassiCraft-1.12.2-2.1.23.jar                | None                                     |
+	| LCHIJA | mysticallib                 | 1.12.2-1.2.1             | MysticalLib-1.12.2.jar                        | None                                     |
+
+	Loaded coremods (and transformers): 
+llibrary (llibrary-core-1.0.11-1.12.2.jar)
+  net.ilexiconn.llibrary.server.core.plugin.LLibraryTransformer
+  net.ilexiconn.llibrary.server.core.patcher.LLibraryRuntimePatcher
+Inventory Tweaks Coremod (InventoryTweaks-1.63.jar)
+  invtweaks.forge.asm.ContainerTransformer
+LoadingPlugin (Skillable-Mod-1.12.2.jar)
+  vazkii.skillable.base.asm.ClassTransformer
+CreativePatchingLoader (CreativeCore-1.12.2.jar)
+  
+ForgelinPlugin (Shadowfacts-Forgelin-1.12.2.jar)
+  
+Born in a Barn (Born-In-A-Barn-Mod-1.12.2.jar)
+  com.chocohead.biab.BornInABarn
+DLFMLCorePlugin (Dynamic-Lights-Mod-1.12.2.jar)
+  atomicstryker.dynamiclights.common.DLTransformer
+ItemPatchingLoader (ItemPhysic-Mod-Full-1.12.2.jar)
+  com.creativemd.itemphysic.ItemTransformer
+IvToolkit (IvToolkit-1.12.jar)
+  
+CTMCorePlugin (CTM-MC1.12.2-0.3.3.22.jar)
+  team.chisel.ctm.client.asm.CTMTransformer
+HCASM (Hammer-Core-1.12.2.jar)
+  com.zeitheron.hammercore.asm.HammerCoreTransformer
+	GL info: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	Hammer Core Information: FluidDictionary Info: Registered 2 fluids.
+OreDictionary Info: Registered 647 names; 1276 stacks.
+Configuration Info: IyBDb25maWd1cmF0aW9uIGZpbGUNCg0KY2xpZW50IHsNCiAgICAjIFNob3VsZCBIYW1tZXIgQ29yZSByZXBsYWNlIGVuY2hhbnRtZW50IGdsaW50IGNvbG9yIHdpdGggbW9yZSBtYXRjaGluZyBjb2xvcnMgZm9yIHNvbWUgdmFuaWxsYSBpdGVtcz8gW2RlZmF1bHQ6IHRydWVdDQogICAgQjoiQ3VzdG9tIEVuY2hhbnRtZW50IENvbG9ycyBmb3IgVmFuaWxsYSBJdGVtcyI9dHJ1ZQ0KDQogICAgIyBTaG91bGQgSGFtbWVyIENvcmUgcG9ydGZvcndhcmQgeW91ciBsb2NhbCB3b3JsZCB3aGVuIHlvdSBzaGFyZSB3aXRoIGl0IHRvIExBTj8NCiAgICAjIFRoaXMgZmVhdHVyZSBkb2Vzbid0IHdvcmsgb24gYWxsIGNsaWVudHMsIHlvdSBhcmUgZ29pbmcgdG8gZ2V0IGEgbWVzc2FnZSBpbiBjaGF0IGlmIGl0IHdhcyBzdWNjZXNzZnVsL3Vuc3VjY2Vzc2Z1bCBbZGVmYXVsdDogdHJ1ZV0NCiAgICBCOiJMQU4gVVBuUCI9dHJ1ZQ0KDQogICAgIyBSZXBsYWNlIHZhbmlsbGEgZnVybmFjZSBhbmQgYnJld2luZyBzdGFuZCBwcm9ncmVzcyBiYXJzIHRvIHVzZSBzbW9vdGggcmVuZGVyaW5nPyBbZGVmYXVsdDogdHJ1ZV0NCiAgICBCOiJTbW9vdGggVmFuaWxsYSBHdWlzIj10cnVlDQp9DQoNCg0KaXdyZW5jaCB7DQogICAgIyBXaGF0IGlzIHRoZSBjb2xvciB3aGVuIHRoZSBob3ZlcmVkIGJsb2NrIGlzIHdyZW5jaGFibGU/IChjb2xvciBlbmNvZGVkIGluIGhleCBmb3JtIHN1Y2ggYXMgUlJHR0JCKQ0KICAgIFM6R3JlZW49MjJGRjIyDQoNCiAgICAjIFdoYXQgaXMgdGhlIGNvbG9yIHdoZW4gdGhlIGhvdmVyZWQgYmxvY2sgaXMgTk9UIHdyZW5jaGFibGU/IChjb2xvciBlbmNvZGVkIGluIGhleCBmb3JtIHN1Y2ggYXMgUlJHR0JCKQ0KICAgIFM6UmVkPUZGMjIyMg0KfQ0KDQoNCiJ2YW5pbGxhIGltcHJvdmVtZW50cyIgew0KICAgICMgU2hvdWxkIEhhbW1lciBDb3JlIGZvcmNlLXNwYXduIEVuZGVyIERyYWdvbiBFZ2cgb24gRW5kZXIgRHJhZ29uIGRlYXRoPyBbZGVmYXVsdDogdHJ1ZV0NCiAgICBCOiJBbHdheXMgU3Bhd24gRHJhZ29uIEVnZyI9dHJ1ZQ0KfQ0KDQoNCg==
+Pastebin Connection: Okay.
+Dependent Mods:
+    -Visuals (visuals) @6r
+
+	Profiler Position: N/A (disabled)
+	Player Count: 1 / 8; [EntityPlayerMP['iiRoyales'/9150, l='New World-', x=-120.33, y=13.00, z=181.70]]
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge,LiteLoader'
+	OptiFine Version: OptiFine_1.12.2_HD_U_E3
+	OptiFine Build: 20181210-121000
+	Render Distance Chunks: 12
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: SEUS-v10.1-Standard.zip
+	OpenGlVersion: 4.6.0 NVIDIA 431.60
+	OpenGlRenderer: GeForce GTX 1060 3GB/PCIe/SSE2
+	OpenGlVendor: NVIDIA Corporation
+	CpuCount: 4
